@@ -1,4 +1,4 @@
-let pacientes = document.querySelectorAll(".paciente")
+pacientes = document.querySelectorAll(".paciente")
 
 for (i=0;i<pacientes.length; i++){
     let pacienteTr = pacientes[i]
@@ -20,8 +20,8 @@ function preenchimento_tdImc(paciente,pacienteTr) {
     
     tdImc = pacienteTr.querySelector(".info-imc")
 
-    var pesoValido = true;
-    var alturaValida = true;
+    let pesoValido = true;
+    let alturaValida = true;
     
         if(paciente.peso<=0 || paciente.peso >= 500){        
             tdImc.textContent = "Peso invalido";
@@ -51,9 +51,9 @@ function preenchimento_tdImc(paciente,pacienteTr) {
 
 }
     
-    
+
 function calculaImc(peso,altura) {
-    var imc = peso / (altura*altura)
+    let imc = peso / (altura*altura)
     return imc.toFixed(2)
 }
     

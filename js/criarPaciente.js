@@ -1,4 +1,4 @@
-const botaoadicionar = document.querySelector("#adicionar-paciente")
+botaoadicionar = document.querySelector("#adicionar-paciente")
 
 botaoadicionar.addEventListener("click",function(Event){
 Event.preventDefault();
