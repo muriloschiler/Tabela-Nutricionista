@@ -1,4 +1,4 @@
-botaoadicionar = document.querySelector("#adicionar-paciente")
+const botaoadicionar = document.querySelector("#adicionar-paciente")
 
 botaoadicionar.addEventListener("click",function(Event){
 Event.preventDefault();
@@ -34,7 +34,7 @@ function criaTr(pacienteNovo){
     criacaoTds(pacienteNovo,pacienteTr)
 
     //Adicao da Tr no Tbody "tabela-pacientes"
-    tabelaPacientes = document.querySelector("#tabela-pacientes")
+    let tabelaPacientes = document.querySelector("#tabela-pacientes")
     tabelaPacientes.appendChild(pacienteTr)
 }
 

@@ -1,4 +1,4 @@
-pacientes = document.querySelectorAll(".paciente")
+const pacientes = document.querySelectorAll(".paciente")
 
 for (i=0;i<pacientes.length; i++){
     let pacienteTr = pacientes[i]
