@@ -1,8 +1,12 @@
 const tabelaPacientes = document.querySelector("#tabela-pacientes")
 
 tabelaPacientes.addEventListener("dblclick",function(event){
-    let pacienteTr = event.target.parentNode
-    pacienteTr.remove()
+    
+    event.target.parentNode.classList.add("fadeOut")
+
+    setTimeout(function(){ 
+        event.target.parentNode.remove()
+    },500)    
 })
 
 
