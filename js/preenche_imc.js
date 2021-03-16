@@ -10,6 +10,7 @@ for (i=0;i<pacientes.length; i++){
     paciente.peso = pesoTd.textContent
     paciente.altura = alturaTd.textContent
 
+
     preenchimento_tdImc(paciente, pacienteTr)
 
 }

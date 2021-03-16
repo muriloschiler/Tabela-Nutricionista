@@ -58,8 +58,6 @@ function criacaoTds(pacienteNovo, pacienteTr){
     gorduraTd.classList.add("info-gordura") 
 
     imcTd = document.createElement("td")
-    // Calculo do imc do paciente novo
-    imcTd.textContent = calculaImc(pacienteNovo.peso,pacienteNovo.altura)
     imcTd.classList.add("info-imc")
 
     //adicao dos tds na tr
@@ -68,4 +66,9 @@ function criacaoTds(pacienteNovo, pacienteTr){
     pacienteTr.appendChild(alturaTd)
     pacienteTr.appendChild(gorduraTd)
     pacienteTr.appendChild(imcTd)
+
+    // Calculo do imc do paciente novo
+    preenchimento_tdImc(pacienteNovo,pacienteTr)
+
+
 }
