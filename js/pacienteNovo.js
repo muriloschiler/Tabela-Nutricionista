@@ -1,12 +1,12 @@
 const botaoadicionar = document.querySelector("#adicionar-paciente")
 
 botaoadicionar.addEventListener("click",function(Event){
-    Event.preventDefault();
+Event.preventDefault();
 
     const formularioAdiciona = document.querySelector("#form-adiciona")
-    
+   
+    //Criacao do novo paciente pelo formulario
     pacienteNovo = criacaoPaciente(formularioAdiciona)
-    
     criaTr(pacienteNovo)
     
 })
@@ -25,11 +25,21 @@ function criacaoPaciente(formularioAdiciona) {
 
 
 function criaTr(pacienteNovo){
-
     //Criacao da TR
     pacienteTr = document.createElement("tr")
     pacienteTr.classList.add("paciente")
 
+    // Criacao dos Tds
+    //adicao dos tds na tr
+    criacaoTds(pacienteNovo,pacienteTr)
+
+    //Adicao da Tr no Tbody "tabela-pacientes"
+    tabelaPacientes = document.querySelector("#tabela-pacientes")
+    tabelaPacientes.appendChild(pacienteTr)
+}
+
+
+function criacaoTds(pacienteNovo, pacienteTr){
     // Criacao dos Tds
     nomeTd = document.createElement("td")
     nomeTd.textContent = pacienteNovo.nome
@@ -48,21 +58,14 @@ function criaTr(pacienteNovo){
     gorduraTd.classList.add("info-gordura") 
 
     imcTd = document.createElement("td")
+    // Calculo do imc do paciente novo
     imcTd.textContent = calculaImc(pacienteNovo.peso,pacienteNovo.altura)
     imcTd.classList.add("info-imc")
-    console.log("Valor imc : "+imcTd.textContent+" ")
-    
-    //adicao dos tds na tr
 
+    //adicao dos tds na tr
     pacienteTr.appendChild(nomeTd)
     pacienteTr.appendChild(pesoTd)
     pacienteTr.appendChild(alturaTd)
     pacienteTr.appendChild(gorduraTd)
     pacienteTr.appendChild(imcTd)
-
-    //Adicao da Tr no Tbody "tabela-pacientes"
-
-    tabelaPacientes = document.querySelector("#tabela-pacientes")
-    tabelaPacientes.appendChild(pacienteTr)
-
 }
